@@ -208,3 +208,11 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.14 (using `|` union types, running on latest stable compatible env) + `streamlit`, `openai`, `python-dotenv` (001-ai-chatbot-ui)
+- In-memory (`st.session_state`) for chat history; OpenAI Cloud for Thread state. (001-ai-chatbot-ui)
+- Python 3.14 (using `|` union types, running on latest stable compatible env) + `streamlit`, `openai-agents`, `python-dotenv` (001-ai-chatbot-ui)
+
+## Recent Changes
+- 001-ai-chatbot-ui: Added Python 3.14 (using `|` union types, running on latest stable compatible env) + `streamlit`, `openai`, `python-dotenv`
