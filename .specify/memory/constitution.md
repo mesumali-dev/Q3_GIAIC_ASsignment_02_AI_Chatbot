@@ -1,55 +1,59 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report
+Version: 1.0.0 (Initial Ratification)
+Modified Principles: Established initial principles (TDD, Tech Stack, Clean Code, ADRs, Context7)
+Added Sections: Technology Stack, Quality Gates
+Templates requiring updates: ✅ None
+-->
+# AI Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Test-Driven Development (TDD)
+**Write tests first.**
+Adhere strictly to the TDD approach. Tests must be written and fail before implementation begins. This ensures testability and clear requirements.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Modern Python Environment
+**Use Python 3.14 with `uv`.**
+The project is standardized on Python 3.14, utilizing the `uv` package manager for dependency management and virtual environments.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clean Code
+**Keep code clean and easy to read.**
+Code maintainability is paramount. Write code that is self-explanatory where possible, and easy for others to understand.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Architectural Decision Records (ADR)
+**Document important decisions.**
+Use ADRs to document significant architectural choices, ensuring context and rationale are preserved.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Context7 First
+**Use Context7 for documentation.**
+Always use the Context7 MCP server tool to look up documentation before implementation. Specifically, before writing code for 'openai agents sdk', verify usage via Context7.
 
-### [PRINCIPLE_6_NAME]
+## Technology Stack
 
+**Core**: Python 3.14 managed by `uv`.
+**Chatbot Agent Code**: openai agents sdk.
+**UI**: Streamlit (latest version).
+**Testing**: pytest.
+**Version Control**: git (track all project files).
 
-[PRINCIPLE__DESCRIPTION]
+## Quality Gates
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Testing**: All tests must pass (100% pass rate).
+**Coverage**: At least 80% code coverage required.
+**Validation**: No merge without passing tests and adequate coverage.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**Supremacy**:
+This constitution supersedes other project documents.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Amendments**:
+Changes require a Pull Request and consensus.
+
+**Versioning**:
+Follow semantic versioning (MAJOR.MINOR.PATCH).
+
+**Compliance**:
+All code and architectural changes must comply with these principles.
+
+**Version**: 1.0.0 | **Ratified**: 2025-11-28 | **Last Amended**: 2025-11-28
