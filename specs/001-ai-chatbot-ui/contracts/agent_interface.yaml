@@ -1,0 +1,40 @@
+# Internal Interface: Chat Agent Service
+
+name: ChatAgent
+description: Encapsulates interaction with OpenAI Assistants API.
+
+methods:
+  - name: __init__
+    params:
+      - name: api_key
+        type: str
+        required: true
+      - name: model_name
+        type: str
+        default: "gpt-4o-mini"
+    description: Initialize client and agent.
+
+  - name: create_session
+    params: []
+    returns: str
+    description: Creates a new OpenAI Agents SDK Session and returns the session_id.
+
+  - name: send_message
+    params:
+      - name: session_id
+        type: str
+        required: true
+      - name: content
+        type: str
+        required: true
+    returns: Generator[str, None, None]
+    description: Sends a user message to the session and yields chunks of the agent's response (text deltas).
+    raises:
+      - Error: NetworkError if API is unreachable.
+      - Error: RateLimitError if quota exceeded.
+
+  - name: clear_session
+    params:
+      - name: session_id
+        type: str
+    description: Clears the specified session's history. (This might be a local operation depending on SDK)
